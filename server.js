@@ -35,7 +35,7 @@ app.post('/api/products', async (req, res) => {
     }
 })
 
-mongoose.connect("mongodb+srv://zorororonoaa11:6TsCQFGB51EwwOVt@backendcluster.bh5k2.mongodb.net/Node-API?retryWrites=true&w=majority&appName=BackendCluster")
+mongoose.connect(process.env.MONGODB_URL)
     .then(() => {
         console.log('Database connected');
         app.listen(3000, () => {
