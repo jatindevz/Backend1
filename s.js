@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb+srv://thejatinpatilx:HTcHZ69Gpyuwc0xy@onepiece-1.jqdjt.mongodb.net/Node-API?retryWrites=true&w=majority&appName=OnePiece-1')
+mongoose.connect(process.env.MONGODB_URL)
     .then(() => {
         console.log('Connected!');
         app.listen(8000, () => {
